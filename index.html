@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f6f0">
+<title>Theorem Proving · Math Gym</title>
+<style>
+:root{--paper:#f7f6f0;--ink:#192c25;--muted:#53665c;--line:#c9cfc2;--green:#185642;--orange:#bf5627;--white:#fffefa;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--sans:Inter,"PingFang SC","Microsoft YaHei",sans-serif;--serif:"STIX Two Text",Georgia,"Songti SC",serif}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 var(--sans)}a{color:inherit}button,input,select{font:inherit;color:inherit}button,select{cursor:pointer}button{background:none;border:0}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #cd732f;outline-offset:3px}html{scroll-padding-top:18px}.wrap{max-width:1240px;margin:auto;padding:0 clamp(20px,5vw,76px)}header{border-bottom:1px solid var(--line)}.nav{min-height:65px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.brand{display:inline-flex;align-items:center;gap:10px;font:700 22px var(--serif);text-decoration:none}.mark{display:grid;place-items:center;background:var(--green);color:#fff;width:31px;height:31px;font:italic 26px var(--serif);border-radius:6px}.nav nav{display:flex;align-items:center;gap:clamp(15px,3vw,40px);font-size:13px}.nav a:not(.brand){text-decoration:none}.nav a:hover,.foot a:hover{text-decoration:underline}.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(16px,4vw,62px);align-items:center;padding:54px 0 48px}.eyebrow{margin:0 0 13px;color:var(--green);font:600 11px/1.4 var(--mono);letter-spacing:.13em}.hero h1{font:normal clamp(54px,7vw,96px)/.97 var(--serif);letter-spacing:-.06em;margin:0}.hero h1 i{color:var(--green);font-weight:normal}.lede{color:var(--muted);margin:20px 0 22px;max-width:35em}.hero a{display:inline-block;text-decoration:none;padding:9px 16px;border-radius:5px;font-size:13px}.primary{color:white;background:var(--green)}.secondary{margin-left:8px;border:1px solid var(--line)}.hero figure{margin:0;background:#e9ede1;display:grid;grid-template-rows:1fr auto;height:248px;border-radius:8px;overflow:hidden;position:relative}.hero canvas{width:100%;height:100%;min-height:0}.hero figcaption{padding:5px 14px 10px;display:flex;justify-content:space-between;color:#42594b;font:10px/1.4 var(--mono);letter-spacing:.025em}.strip{border-block:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:16px 0;gap:12px}.strip div{padding-left:clamp(8px,2vw,26px);border-left:1px solid var(--line);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}.strip div:first-child{padding-left:0;border:0}.strip b{font:normal 26px/1.1 var(--serif)}.strip small{color:var(--muted);font-size:12px}section.block{padding-top:49px}.heading{display:flex;align-items:end;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:17px}.heading h2{font:600 29px/1.25 var(--sans);margin:0;letter-spacing:-.04em}.heading p{margin:6px 0 0;color:var(--muted);font-size:13px}.switch{display:inline-flex;border:1px solid var(--line);border-radius:6px;padding:3px;gap:2px;background:#eeeeE6}.switch button{font-size:12px;padding:5px 12px;border-radius:4px;line-height:1.4}.switch button[aria-pressed=true]{background:var(--green);color:#fff}.boards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.board{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--green);border-radius:6px;padding:21px 23px}.board.hard{border-top-color:var(--orange)}.boardhead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding-bottom:13px}.board h3{font:normal 29px var(--serif);margin:0}.boardhead .level{font:500 13px var(--sans);margin-left:9px;color:var(--muted)}.tiny,.note{font-size:12px;color:var(--muted)}.row{padding-top:14px}.rowtop{display:flex;align-items:baseline;justify-content:space-between;gap:10px}.rowtop b{font-size:14px}.rowtop span{font:12px var(--mono)}.bar{height:7px;background:#e6eae1;border-radius:2px;margin-top:5px;overflow:hidden}.bar i{display:block;background:var(--green);height:100%;border-radius:2px}.hard .bar i{background:var(--orange)}.pending{font-size:12px;color:var(--muted);margin:18px 0 0;padding-top:10px;border-top:1px dashed var(--line)}.footnote{font-size:12px;color:var(--muted);margin:11px 0 0}.controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:15px 0}.controls input,.controls select{border:1px solid var(--line);border-radius:5px;background:var(--white);padding:7px 10px;font-size:13px}.controls input{flex:1;min-width:125px}.list{background:var(--white);border-block:1px solid var(--line)}table{border-collapse:collapse;width:100%;text-align:left;font-size:14px}th{font-weight:500;color:var(--muted);font-size:12px}th,td{padding:9px 8px;border-bottom:1px solid #dfe3d8}tbody tr:last-child td{border-bottom:0}.catalog th,.catalog td{padding:10px 14px}.catalog th:last-child,.catalog td:last-child{text-align:right;white-space:nowrap}.catalog td:nth-child(2){color:var(--muted);font-size:13px}.board td,.board th{padding:9px 3px}.more{color:var(--green);border:1px solid var(--line);border-radius:5px;padding:6px 18px;font-size:13px;margin-top:12px}.resources{display:grid;grid-template-columns:1fr 1fr 1.5fr;gap:16px}.resource{display:block;text-align:left;text-decoration:none;border-top:2px solid var(--green);padding:14px 0}.resource b{font-size:16px}.resource span{float:right;color:var(--green)}.resource p{font-size:13px;color:var(--muted);margin:5px 0 0}.foot{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid var(--line);padding:20px 0;margin-top:28px;color:var(--muted);font-size:12px}.foot a{color:var(--green);text-decoration:none}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}[hidden]{display:none!important}
+@media(max-width:760px){.hero{gap:20px;padding:34px 0}.hero figure{height:200px}.boards{gap:10px}.board{padding:15px 13px}.resources{grid-template-columns:1fr 1fr}.resources .resource:last-child{grid-column:1/-1}.strip div{gap:5px}.catalog th,.catalog td{padding:9px}.heading h2{font-size:25px}}
+@media(max-width:580px){.wrap{padding:0 17px}.nav{min-height:54px;gap:8px}.brand{font-size:18px}.nav nav{gap:12px;font-size:12px}.hero{grid-template-columns:1fr;padding:28px 0 18px}.hero h1{font-size:53px}.hero h1 br{display:none}.hero figure{height:127px}.lede{margin:12px 0 15px;font-size:14px}.strip small{font-size:10px}.strip b{font-size:21px}.strip div{display:grid;gap:4px}.strip{gap:5px}.boards{grid-template-columns:1fr}.controls{gap:6px}.catalog td{font-size:13px}.catalog td:nth-child(2){font-size:11px}.catalog td:first-child{width:57%}.heading .eyebrow{margin-bottom:5px}section.block{padding-top:34px}.foot{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="#overview"><span class="mark" aria-hidden="true">ƒ</span> Math Gym</a><nav aria-label="站内导航"><a href="#results">模型成绩</a><a href="#tasks">题目库</a><a href="#resources">评测资源</a></nav></div></header>
+<main class="wrap" id="overview"><section class="hero">
+<div><p class="eyebrow">PROJECT FORMULA / LEAN BENCHMARK</p><h1>Theorem <br><i>Proving</i></h1><p class="lede">在 Lean 中证明 40 个数学命题。两档难度覆盖优化、组合数学、概率论与理论计算机科学。</p><a href="#results" class="primary">查看模型成绩 ↓</a><a href="#tasks" class="secondary">浏览题库 →</a></div>
+<figure><canvas id="surface" aria-hidden="true"></canvas><figcaption><span>GRAPH OF z = sin(x) cos(y)</span><span>ℝ² → ℝ</span></figcaption></figure></section>
+<div class="strip"><div><b>40</b><small>定理证明题</small></div><div><b>2</b><small>难度等级</small></div><div><b>4</b><small>数学领域</small></div><div><b>2 h</b><small>每题时限</small></div></div>
+<section class="block" id="results"><div class="heading"><div><p class="eyebrow">LEADERBOARD</p><h2>模型成绩</h2><p>每档 20 题，按完整通过独立验收的题数统计。</p></div><div class="switch" id="view" aria-label="成绩视图"><button data-mode="chart" aria-pressed="true">图表</button><button data-mode="table" aria-pressed="false">表格</button></div></div><div id="boards" class="boards"></div><p class="footnote">数据截至 2026-11-26。表格列出各成绩的来源；部分评分仅报告已判定题数。</p></section>
+<section class="block" id="tasks"><div class="heading"><div><p class="eyebrow">TASK EXPLORER</p><h2>题目库</h2></div><span class="tiny" id="count" aria-live="polite"></span></div>
+<div class="controls"><div class="switch" id="filters" aria-label="题目难度"><button data-tier="all" aria-pressed="true">全部</button><button data-tier="Tier 1" aria-pressed="false">Tier 1</button><button data-tier="Tier 2" aria-pressed="false">Tier 2</button></div><select id="domain" aria-label="筛选数学领域"><option value="">全部领域</option></select><input type="search" id="query" aria-label="搜索题目" placeholder="搜索题名或关键词…"></div>
+<div class="list"><table class="catalog"><thead><tr><th scope="col">题目</th><th scope="col">数学领域</th><th scope="col">难度</th></tr></thead><tbody id="items"></tbody></table></div><button class="more" id="more" hidden></button></section>
+<section class="block" id="resources"><div class="heading"><div><p class="eyebrow">RESOURCES</p><h2>评测资源</h2></div></div><div class="resources"><a class="resource" id="csv" download="math-gym-leaderboard.csv"><span>↓ CSV</span><b>模型成绩</b><p>两档汇总、评分进度和数据来源。</p></a><a class="resource" id="catalog" download="math-gym-tasks.json"><span>↓ JSON</span><b>题目清单</b><p>40 道题的名称、标识、领域和难度。</p></a><div class="resource"><b>评测协议</b><p>Lean 4.33.1，固定 Mathlib。每题最多 2 小时、128 次模型响应、512 次工具调用。独立检查定理声明、内核证明与公理依赖，整题通过得 100 分。</p></div></div></section>
+<footer class="foot"><span>Project Formula · Math Gym</span><a href="#overview">返回顶部 ↑</a></footer></main>
+<script type="application/json" id="dataset">
+{
+  "updated": "2026-11-26",
+  "topics": {
+    "Tier 1": [
+      {
+        "id": "combinatorics/augmenting-path-maximum-matching",
+        "title": "Berge 最大匹配的增广链刻画"
+      },
+      {
+        "id": "combinatorics/chowla-residue-sumsets",
+        "title": "Chowla 单位差和集增长（受限版本）"
+      },
+      {
+        "id": "combinatorics/clique-bounded-matching-extremal",
+        "title": "团数与匹配数双约束的极值图"
+      },
+      {
+        "id": "combinatorics/erdos-heilbronn-restricted-sums",
+        "title": "Erdős–Heilbronn 二重受限和集界"
+      },
+      {
+        "id": "combinatorics/uniform-family-bounded-matching",
+        "title": "均匀集合族的匹配极值与唯一性"
+      },
+      {
+        "id": "optimization/accelerated-smooth-gradient",
+        "title": "Nesterov 光滑凸优化加速收敛"
+      },
+      {
+        "id": "optimization/kall-mayer-kkt",
+        "title": "Kall–Mayer 拉格朗日鞍点与原对偶最优性"
+      },
+      {
+        "id": "optimization/quadratic-constraint-duality",
+        "title": "单二次约束的下界与 PSD 对偶证书"
+      },
+      {
+        "id": "optimization/stochastic-accelerated-gradient",
+        "title": "随机加速梯度的显式条件 oracle 版本"
+      },
+      {
+        "id": "optimization/strongly-convex-online-gradient",
+        "title": "强凸在线梯度的对数遗憾界"
+      },
+      {
+        "id": "probability/brownian-exponential-martingale",
+        "title": "Brownian 指数过程的鞅性质"
+      },
+      {
+        "id": "probability/continuous-markov-process",
+        "title": "连续路径 Markov 核的存在唯一性"
+      },
+      {
+        "id": "probability/doob-lp-maximal",
+        "title": "Doob 强型 Lᵖ 极大不等式"
+      },
+      {
+        "id": "probability/freedman-martingale-tail",
+        "title": "Freedman 鞅尾界"
+      },
+      {
+        "id": "probability/kolmogorov-three-series",
+        "title": "Kolmogorov 三列定理"
+      },
+      {
+        "id": "theoretical-computer-science/online-set-cover",
+        "title": "在线集合覆盖的显式整数竞争比"
+      },
+      {
+        "id": "theoretical-computer-science/optimal-pac-sample-complexity",
+        "title": "带显式可测性条件的最优阶 PAC 样本复杂度"
+      },
+      {
+        "id": "theoretical-computer-science/parallel-independent-set",
+        "title": "保守并列规则下 MIS 单轮期望消边界"
+      },
+      {
+        "id": "theoretical-computer-science/shortest-augmenting-path",
+        "title": "最短增广路的次数界与停机最优性"
+      },
+      {
+        "id": "theoretical-computer-science/stochastic-matching-barrier",
+        "title": "在线随机匹配的一般实例族障碍"
+      }
+    ],
+    "Tier 2": [
+      {
+        "id": "combinatorics/expectation-threshold-equivalence",
+        "title": "分数覆盖的常数倍整数舍入"
+      },
+      {
+        "id": "combinatorics/spread-thinning-domination",
+        "title": "独立稀释后的随机支配"
+      },
+      {
+        "id": "combinatorics/talagrand-discrete-convexity",
+        "title": "Talagrand 离散凸性主结论"
+      },
+      {
+        "id": "probability/ltf-low-degree-fourier-weight",
+        "title": "Boolean 线性阈值函数的低阶 Fourier 权重"
+      },
+      {
+        "id": "optimization/asymmetric-phase-barrier",
+        "title": "有序 Bellman 递推的周期极限与严格支撑间隙"
+      },
+      {
+        "id": "optimization/certified-dyadic-corner",
+        "title": "二进插值在 3/2 处的单侧导数"
+      },
+      {
+        "id": "optimization/conditional-restart",
+        "title": "随机比较点下的条件末次迭代界"
+      },
+      {
+        "id": "optimization/dyadic-energy",
+        "title": "从单个边际约束推出倒数平方可和"
+      },
+      {
+        "id": "optimization/exact-frontier",
+        "title": "随机梯度下降末次迭代的时间一致收敛边界"
+      },
+      {
+        "id": "optimization/exact-symmetric-phase",
+        "title": "对称递推的精确周期律与全部聚点"
+      },
+      {
+        "id": "optimization/gaussian-epoch-ceiling",
+        "title": "单条高斯轨道对二进区间步长总和的限制"
+      },
+      {
+        "id": "optimization/kernel-rearrangement",
+        "title": "四点重排的完整等号判据"
+      },
+      {
+        "id": "optimization/optimal-tree-classification",
+        "title": "判定所有最优有序合成树"
+      },
+      {
+        "id": "optimization/partition-scaling-limit",
+        "title": "从离散最优合成到连续有序分割"
+      },
+      {
+        "id": "optimization/sgd-cantor-decoder",
+        "title": "Cantor 前缀解码的最优误差量级"
+      },
+      {
+        "id": "optimization/sgd-contractive-uniform",
+        "title": "收缩随机逼近的全时域界与同阶高斯下界"
+      },
+      {
+        "id": "optimization/sgd-extremal-logmgf",
+        "title": "强凸 SGD 在固定时刻的指数矩与尾界"
+      },
+      {
+        "id": "optimization/sgd-gaussian-lower",
+        "title": "高斯梯度观测下的全时域优化下界"
+      },
+      {
+        "id": "optimization/sgd-uniform-boundary",
+        "title": "强凸随机梯度下降的全时域界"
+      },
+      {
+        "id": "optimization/smaller-profile",
+        "title": "任意可达的开销函数都有渐近更小的可达函数"
+      }
+    ]
+  },
+  "scores": {
+    "Tier 1": [
+      {
+        "name": "Claude Opus 5.5",
+        "accepted": 18,
+        "scored": 20,
+        "source": "逐题评分记录"
+      },
+      {
+        "name": "Grok",
+        "accepted": 18,
+        "scored": 20,
+        "source": "团队汇总"
+      },
+      {
+        "name": "DeepSeek V4 Pro",
+        "accepted": 4,
+        "scored": 20,
+        "source": "逐题评分记录"
+      },
+      {
+        "name": "Kimi K3.1 Pro",
+        "accepted": 14,
+        "scored": 19,
+        "source": "逐题评分记录"
+      }
+    ],
+    "Tier 2": [
+      {
+        "name": "GPT Sol",
+        "accepted": 15,
+        "scored": 20,
+        "source": "团队汇总"
+      },
+      {
+        "name": "GPT Astra",
+        "accepted": 15,
+        "scored": 20,
+        "source": "团队汇总"
+      },
+      {
+        "name": "Kimi K3.1 Pro",
+        "accepted": 5,
+        "scored": 20,
+        "source": "逐题评分记录"
+      },
+      {
+        "name": "Claude",
+        "accepted": null,
+        "scored": null,
+        "source": "团队汇总"
+      }
+    ]
+  }
+}
+</script>
+<script>
+const data = JSON.parse(document.getElementById("dataset").textContent);
+const byId = id => document.getElementById(id);
+const levels = {"Tier 1":"基础", "Tier 2":"挑战"};
+const domains = {"combinatorics":"组合数学","probability":"概率论","optimization":"优化","theoretical-computer-science":"理论计算机科学"};
+const tasks = Object.entries(data.topics).flatMap(([tier, topics]) => topics.map(topic => ({...topic, tier, domain:domains[topic.id.split("/")[0]]})));
+const modeState = {mode:"chart", tier:"all", expanded:false};
+function cell(tag, text) {
+  const node = document.createElement(tag);
+  node.textContent = text;
+  return node;
+}
+function setPressed(group, key, value) {
+  group.querySelectorAll("button").forEach(button => button.setAttribute("aria-pressed", button.dataset[key] === value));
+}
+function renderBoards() {
+  byId("boards").replaceChildren();
+  for (const [tier, models] of Object.entries(data.scores)) {
+    const box = document.createElement("article");
+    box.className = tier === "Tier 2" ? "board hard" : "board";
+    const head = document.createElement("div");
+    head.className = "boardhead";
+    const title = cell("h3",tier);
+    const level = cell("span",levels[tier]);
+    level.className = "level";
+    title.append(level);
+    const size = cell("span","20 题");
+    size.className = "tiny";
+    head.append(title,size);
+    box.append(head);
+    if (modeState.mode === "table") {
+      const table = document.createElement("table");
+      table.setAttribute("aria-label",tier+" 模型成绩");
+      const header = table.createTHead().insertRow();
+      for (const h of ["模型","通过 / 已评分","通过率","来源"]) header.append(cell("th",h));
+      const body = table.createTBody();
+      for (const m of models) {
+        const r = body.insertRow();
+        const coverage = m.scored === null ? "测试中" : m.accepted+" / "+m.scored;
+        for (const s of [m.name,coverage,m.scored===20 ? m.accepted*5+"%" : "—",m.source]) r.append(cell("td",s));
+      }
+      box.append(table);
+    } else {
+      for (const m of models) {
+        if (m.scored!==20) {
+          const p = cell("p", m.name+" · "+(m.scored===null ? "测试中" : "已评分 "+m.scored+"/20，通过 "+m.accepted+" 题"));
+          p.className = "pending";
+          box.append(p);
+          continue;
+        }
+        const row = document.createElement("div");
+        row.className = "row";
+        const top = document.createElement("div");
+        top.className = "rowtop";
+        top.append(cell("b",m.name), cell("span",m.accepted+"/20 · "+m.accepted*5+"%"));
+        const bar = document.createElement("div");
+        bar.className = "bar";
+        const fill = document.createElement("i");
+        fill.style.width = m.accepted*5+"%";
+        bar.append(fill);
+        row.append(top,bar);
+        box.append(row);
+      }
+    }
+    byId("boards").append(box);
+  }
+}
+function renderTasks() {
+  const query = byId("query").value.trim().toLocaleLowerCase();
+  const matched = tasks.filter(t => (modeState.tier==="all"||t.tier===modeState.tier) && (!byId("domain").value||t.domain===byId("domain").value) && (t.title+" "+t.id+" "+t.domain).toLocaleLowerCase().includes(query));
+  const rows = byId("items");
+  rows.replaceChildren();
+  const visible = modeState.expanded ? matched : matched.slice(0,8);
+  for (const t of visible) {
+    const r = rows.insertRow();
+    for (const label of [t.title,t.domain,t.tier]) r.append(cell("td",label));
+  }
+  if (!matched.length) {
+    const empty = rows.insertRow().insertCell();
+    empty.colSpan=3;
+    empty.textContent="没有匹配的题目。可更换关键词或筛选条件。";
+  }
+  byId("count").textContent="显示 "+visible.length+" / "+matched.length+" 题";
+  byId("more").hidden = matched.length<=8;
+  byId("more").textContent=modeState.expanded ? "收起题目 ↑" : "查看其余 "+(matched.length-visible.length)+" 题 ↓";
+}
+byId("view").onclick = event => {
+  if (!event.target.dataset.mode) return;
+  modeState.mode=event.target.dataset.mode;
+  setPressed(byId("view"),"mode",modeState.mode);
+  renderBoards();
+};
+function resetList() {modeState.expanded=false;renderTasks();}
+byId("filters").onclick = event => {
+  if (!event.target.dataset.tier) return;
+  modeState.tier=event.target.dataset.tier;
+  setPressed(byId("filters"),"tier",modeState.tier);
+  resetList();
+};
+for (const name of Object.values(domains)) byId("domain").add(new Option(name,name));
+byId("query").oninput=resetList;
+byId("domain").onchange=resetList;
+byId("more").onclick=()=>{modeState.expanded=!modeState.expanded;renderTasks();};
+const csvRows=[["tier","model","accepted","scored","total","pass_rate","status","source"]];
+for (const [tier,models] of Object.entries(data.scores)) {
+  for (const m of models) csvRows.push([tier,m.name,m.accepted,m.scored,20,m.scored===20 ? m.accepted*5+"%" : "",m.scored===20 ? "complete" : m.scored===null ? "testing" : "partial",m.source]);
+}
+byId("csv").href=URL.createObjectURL(new Blob(["\uFEFF"+csvRows.map(r=>r.map(v=>'"'+String(v??"").replaceAll('"','""')+'"').join(",")).join("\r\n")],{type:"text/csv;charset=utf-8"}));
+byId("catalog").href=URL.createObjectURL(new Blob([JSON.stringify(tasks,null,2)],{type:"application/json"}));
+renderBoards();
+renderTasks();
+function drawSurface() {
+  const canvas=byId("surface");
+  const width=canvas.clientWidth, height=canvas.clientHeight;
+  const ratio=window.devicePixelRatio||1;
+  canvas.width=Math.round(width*ratio);canvas.height=Math.round(height*ratio);
+  const ctx=canvas.getContext("2d");
+  if (!ctx) return;
+  ctx.scale(ratio,ratio);
+  const scale=Math.min(width/8.4,height/3.9);
+  function project(x,y,z) {return [width*.5+(x-y)*scale*.69,height*.51+(x+y)*scale*.24-z*scale*.76];}
+  function path(points, color, lineWidth) {
+    ctx.beginPath();
+    points.forEach(([x,y],i)=>i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y));
+    ctx.strokeStyle=color;ctx.lineWidth=lineWidth;ctx.stroke();
+  }
+  for (let i=-18;i<=18;i++) {
+    const a=i*Math.PI/18, line1=[],line2=[];
+    for (let j=0;j<=90;j++) {
+      const b=-Math.PI+j*Math.PI/45;
+      line1.push(project(a,b,Math.sin(a)*Math.cos(b)));
+      line2.push(project(b,a,Math.sin(b)*Math.cos(a)));
+    }
+    path(line1,i===0 ? "#b94f27" : "#527663",i===0 ? 2 : .7);
+    path(line2,"#769382",.65);
+  }
+}
+new ResizeObserver(drawSurface).observe(byId("surface"));
+</script></body></html>
