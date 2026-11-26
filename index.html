@@ -20,7 +20,7 @@ header{position:sticky;top:0;z-index:3;background:var(--paper)}html{scroll-paddi
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="#overview"><span class="mark" aria-hidden="true">ƒ</span> Math Gym</a><nav aria-label="站内导航"><a href="#overview">Overview</a><a href="#tier-1">Tier 1</a><a href="#tier-2">Tier 2</a><a href="#outcomes">Outcomes</a><a href="#tasks">Task explorer</a><a href="#resources">Get started</a><a href="#citation">Citation</a><a href="https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/evaluation/README.md" title="项目仓库中的评测文档（需仓库权限）">Documentation ↗</a></nav></div></header>
+<header><div class="wrap nav"><a class="brand" href="#overview"><span class="mark" aria-hidden="true">ƒ</span> Math Gym</a><nav aria-label="站内导航"><a href="#overview">Overview</a><a href="#tier-1">Tier 1</a><a href="#tier-2">Tier 2</a><a href="#outcomes">Outcomes</a><a href="#tasks">Task explorer</a><a href="#resources">Get started</a><a href="#citation">Citation</a><a href="docs/index.html">Documentation</a></nav></div></header>
 <main class="wrap" id="overview"><section class="hero">
 <div><p class="eyebrow">PROJECT FORMULA / LEAN BENCHMARK</p><h1>Theorem <br><i>Proving</i></h1><p class="lede">在 Lean 中证明 40 个数学命题。两档难度覆盖优化、组合数学、概率论与理论计算机科学。</p><a href="#results" class="primary">查看模型成绩 ↓</a><a href="#tasks" class="secondary">浏览题库 →</a></div>
 <figure><canvas id="surface" aria-hidden="true"></canvas><figcaption><span>GRAPH OF z = sin(x) cos(y)</span><span>ℝ² → ℝ</span></figcaption></figure></section>
@@ -55,7 +55,7 @@ header{position:sticky;top:0;z-index:3;background:var(--paper)}html{scroll-paddi
 
 <section class="block" id="resources">
   <div class="heading"><div><p class="eyebrow">GET STARTED</p><h2>运行评测</h2><p>在项目仓库根目录使用以下命令。需要 Python 3.11+、Docker、仓库访问权限，以及解压后的 v2 环境包。</p></div></div>
-  <div class="actions"><a href="https://github.com/Project-Formula/math-gym-lean/releases/tag/lean-core20-evaluation-2h-v2">下载 v2 环境包 ↗</a><a href="https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/evaluation/README.md">完整运行指南 ↗</a></div>
+  <div class="actions"><a href="https://github.com/Project-Formula/math-gym-lean/releases/tag/lean-core20-evaluation-2h-v2">下载 v2 环境包 ↗</a><a href="docs/quickstart.html">快速开始 →</a><a href="docs/tiers.html">整档运行指南 →</a></div>
   <div class="guide"><div class="guide-options"><div class="switch" id="guide-tier" aria-label="运行题包"><button data-tier="Tier 1" aria-pressed="true">Tier 1</button><button data-tier="Tier 2" aria-pressed="false">Tier 2</button></div>
     <div class="switch" id="guide-step" aria-label="运行步骤"><button data-step="install" aria-pressed="true">1 安装</button><button data-step="configure" aria-pressed="false">2 配置</button><button data-step="run" aria-pressed="false">3 运行</button></div></div>
     <p id="guide-note"></p><pre><code id="commands"></code></pre><button class="more" id="copy-commands">复制命令</button></div>
