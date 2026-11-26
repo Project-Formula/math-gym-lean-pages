@@ -18,7 +18,7 @@
 <div><p class="eyebrow">PROJECT FORMULA / LEAN BENCHMARK</p><h1>Theorem <br><i>Proving</i></h1><p class="lede">在 Lean 中证明 40 个数学命题。两档难度覆盖优化、组合数学、概率论与理论计算机科学。</p><a href="#results" class="primary">查看模型成绩 ↓</a><a href="#tasks" class="secondary">浏览题库 →</a></div>
 <figure><canvas id="surface" aria-hidden="true"></canvas><figcaption><span>GRAPH OF z = sin(x) cos(y)</span><span>ℝ² → ℝ</span></figcaption></figure></section>
 <div class="strip"><div><b>40</b><small>定理证明题</small></div><div><b>2</b><small>难度等级</small></div><div><b>4</b><small>数学领域</small></div><div><b>2 h</b><small>每题时限</small></div></div>
-<section class="block" id="results"><div class="heading"><div><p class="eyebrow">LEADERBOARD</p><h2>模型成绩</h2><p>每档 20 题，按完整通过独立验收的题数统计。</p></div><div class="switch" id="view" aria-label="成绩视图"><button data-mode="chart" aria-pressed="true">图表</button><button data-mode="table" aria-pressed="false">表格</button></div></div><div id="boards" class="boards"></div><p class="footnote">数据截至 2026-11-26。表格列出各成绩的来源；部分评分仅报告已判定题数。</p></section>
+<section class="block" id="results"><div class="heading"><div><p class="eyebrow">LEADERBOARD</p><h2>模型成绩</h2><p>每档 20 题，按完整通过独立验收的题数统计。</p></div><div class="switch" id="view" aria-label="成绩视图"><button data-mode="chart" aria-pressed="true">图表</button><button data-mode="table" aria-pressed="false">表格</button></div></div><div id="boards" class="boards"></div><p class="footnote">数据截至 2026-11-27。通过率按各档 20 题计算，表格列出各项成绩的来源。</p></section>
 <section class="block" id="tasks"><div class="heading"><div><p class="eyebrow">TASK EXPLORER</p><h2>题目库</h2></div><span class="tiny" id="count" aria-live="polite"></span></div>
 <div class="controls"><div class="switch" id="filters" aria-label="题目难度"><button data-tier="all" aria-pressed="true">全部</button><button data-tier="Tier 1" aria-pressed="false">Tier 1</button><button data-tier="Tier 2" aria-pressed="false">Tier 2</button></div><select id="domain" aria-label="筛选数学领域"><option value="">全部领域</option></select><input type="search" id="query" aria-label="搜索题目" placeholder="搜索题名或关键词…"></div>
 <div class="list"><table class="catalog"><thead><tr><th scope="col">题目</th><th scope="col">数学领域</th><th scope="col">难度</th></tr></thead><tbody id="items"></tbody></table></div><button class="more" id="more" hidden></button></section>
@@ -26,7 +26,7 @@
 <footer class="foot"><span>Project Formula · Math Gym</span><a href="#overview">返回顶部 ↑</a></footer></main>
 <script type="application/json" id="dataset">
 {
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "topics": {
     "Tier 1": [
       {
@@ -208,15 +208,16 @@
         "source": "团队汇总"
       },
       {
-        "name": "DeepSeek V4 Pro",
-        "accepted": 4,
-        "scored": 20,
-        "source": "逐题评分记录"
-      },
-      {
         "name": "Kimi K3.1 Pro",
         "accepted": 14,
         "scored": 19,
+        "source": "团队汇总",
+        "reportedTotal": 20
+      },
+      {
+        "name": "DeepSeek V4 Pro",
+        "accepted": 4,
+        "scored": 20,
         "source": "逐题评分记录"
       }
     ],
@@ -264,6 +265,13 @@ function cell(tag, text) {
 function setPressed(group, key, value) {
   group.querySelectorAll("button").forEach(button => button.setAttribute("aria-pressed", button.dataset[key] === value));
 }
+function publishedTotal(model) {
+  return model.reportedTotal ?? (model.scored === 20 ? 20 : null);
+}
+function passRate(model) {
+  const total = publishedTotal(model);
+  return total === null ? "" : (100 * model.accepted / total) + "%";
+}
 function renderBoards() {
   byId("boards").replaceChildren();
   for (const [tier, models] of Object.entries(data.scores)) {
@@ -283,17 +291,17 @@ function renderBoards() {
       const table = document.createElement("table");
       table.setAttribute("aria-label",tier+" 模型成绩");
       const header = table.createTHead().insertRow();
-      for (const h of ["模型","通过 / 已评分","通过率","来源"]) header.append(cell("th",h));
+      for (const h of ["模型","通过 / 题数","通过率","来源"]) header.append(cell("th",h));
       const body = table.createTBody();
       for (const m of models) {
         const r = body.insertRow();
-        const coverage = m.scored === null ? "测试中" : m.accepted+" / "+m.scored;
-        for (const s of [m.name,coverage,m.scored===20 ? m.accepted*5+"%" : "—",m.source]) r.append(cell("td",s));
+        const coverage = m.scored === null ? "测试中" : m.accepted+" / "+(publishedTotal(m) ?? m.scored);
+        for (const s of [m.name,coverage,passRate(m) || "—",m.source]) r.append(cell("td",s));
       }
       box.append(table);
     } else {
       for (const m of models) {
-        if (m.scored!==20) {
+        if (publishedTotal(m) === null) {
           const p = cell("p", m.name+" · "+(m.scored===null ? "测试中" : "已评分 "+m.scored+"/20，通过 "+m.accepted+" 题"));
           p.className = "pending";
           box.append(p);
@@ -303,11 +311,11 @@ function renderBoards() {
         row.className = "row";
         const top = document.createElement("div");
         top.className = "rowtop";
-        top.append(cell("b",m.name), cell("span",m.accepted+"/20 · "+m.accepted*5+"%"));
+        top.append(cell("b",m.name), cell("span",m.accepted+"/"+publishedTotal(m)+" · "+passRate(m)));
         const bar = document.createElement("div");
         bar.className = "bar";
         const fill = document.createElement("i");
-        fill.style.width = m.accepted*5+"%";
+        fill.style.width = passRate(m);
         bar.append(fill);
         row.append(top,bar);
         box.append(row);
@@ -354,7 +362,7 @@ byId("domain").onchange=resetList;
 byId("more").onclick=()=>{modeState.expanded=!modeState.expanded;renderTasks();};
 const csvRows=[["tier","model","accepted","scored","total","pass_rate","status","source"]];
 for (const [tier,models] of Object.entries(data.scores)) {
-  for (const m of models) csvRows.push([tier,m.name,m.accepted,m.scored,20,m.scored===20 ? m.accepted*5+"%" : "",m.scored===20 ? "complete" : m.scored===null ? "testing" : "partial",m.source]);
+  for (const m of models) csvRows.push([tier,m.name,m.accepted,m.scored,20,passRate(m),m.reportedTotal ? "team_reported" : m.scored===20 ? "complete" : m.scored===null ? "testing" : "partial",m.source]);
 }
 byId("csv").href=URL.createObjectURL(new Blob(["\uFEFF"+csvRows.map(r=>r.map(v=>'"'+String(v??"").replaceAll('"','""')+'"').join(",")).join("\r\n")],{type:"text/csv;charset=utf-8"}));
 byId("catalog").href=URL.createObjectURL(new Blob([JSON.stringify(tasks,null,2)],{type:"application/json"}));
