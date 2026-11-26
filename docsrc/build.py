@@ -3,7 +3,6 @@ import hashlib
 import html
 import json
 import re
-from urllib.parse import quote
 from pathlib import Path
 
 SOURCE = Path(__file__).resolve().parent
@@ -82,10 +81,10 @@ def write_handbook(lang, pages, other):
         for task in topics[tier]:
             english = translations[task["id"].split("/")[-1]]
             name = tr(task["title"],english)
-            href = home+"?task="+quote(task["id"],safe="")+"#tasks"
+            href = url(f"repo:{TP}{task['id']}/tasks/public/PROBLEM.md")
             items.append(f'<li><a href="{href}">{esc(name)}</a></li>')
             search.append({"page":tier,"title":name,"alias":task["id"]+" "+tr(english,task["title"]),
-                           "text":tr(task["summary"],"Open the task and read its Lean target in the explorer."),
+                           "text":tr(task["summary"],"Read the problem statement in the project repository."),
                            "href":href})
         return '<ul class="catalogue-list">'+"".join(items)+"</ul>"
 

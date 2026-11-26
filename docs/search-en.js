@@ -98,158 +98,144 @@ const searchEntries = [
   "href": "tiers.html#launch"
  },
  {
-  "page": "Task catalogue",
-  "title": "Find a theorem",
-  "alias": "题目目录",
-  "text": "Open the task explorer , select a tier and choose a subject. The list is compact. Cards also show the mathematical objective. Open a title to inspect its Lean target and copy a link to the task.",
-  "href": "catalogue.html#browse"
- },
- {
-  "page": "Task catalogue",
-  "title": "Read the task package",
-  "alias": "题目目录",
-  "text": "PROBLEM.md describes the mathematical question. Foundation.lean supplies the allowed definitions. Task.lean contains the declaration to prove. The frozen Lean type specifies the exact parameters, assumptions and conclusion.",
-  "href": "catalogue.html#files"
- },
- {
   "page": "Tier 1",
   "title": "Berge’s augmenting path criterion for maximum matchings",
   "alias": "combinatorics/augmenting-path-maximum-matching Berge 最大匹配的增广链刻画",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=combinatorics%2Faugmenting-path-maximum-matching#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/combinatorics/augmenting-path-maximum-matching/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Chowla’s sumset bound under a unit-difference condition",
   "alias": "combinatorics/chowla-residue-sumsets Chowla 单位差和集增长（受限版本）",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=combinatorics%2Fchowla-residue-sumsets#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/combinatorics/chowla-residue-sumsets/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Extremal graphs with bounded clique and matching numbers",
   "alias": "combinatorics/clique-bounded-matching-extremal 团数与匹配数双约束的极值图",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=combinatorics%2Fclique-bounded-matching-extremal#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/combinatorics/clique-bounded-matching-extremal/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "The Erdős–Heilbronn bound for restricted pair sums",
   "alias": "combinatorics/erdos-heilbronn-restricted-sums Erdős–Heilbronn 二重受限和集界",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=combinatorics%2Ferdos-heilbronn-restricted-sums#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/combinatorics/erdos-heilbronn-restricted-sums/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Extremal uniform families with bounded matching number",
   "alias": "combinatorics/uniform-family-bounded-matching 均匀集合族的匹配极值与唯一性",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=combinatorics%2Funiform-family-bounded-matching#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/combinatorics/uniform-family-bounded-matching/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Accelerated convergence for smooth convex objectives",
   "alias": "optimization/accelerated-smooth-gradient Nesterov 光滑凸优化加速收敛",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Faccelerated-smooth-gradient#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/accelerated-smooth-gradient/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Kall–Mayer saddle points and primal–dual optimality",
   "alias": "optimization/kall-mayer-kkt Kall–Mayer 拉格朗日鞍点与原对偶最优性",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Fkall-mayer-kkt#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/kall-mayer-kkt/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Lower bounds and PSD certificates for one quadratic constraint",
   "alias": "optimization/quadratic-constraint-duality 单二次约束的下界与 PSD 对偶证书",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Fquadratic-constraint-duality#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/quadratic-constraint-duality/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Stochastic accelerated gradients with a conditional oracle",
   "alias": "optimization/stochastic-accelerated-gradient 随机加速梯度的显式条件 oracle 版本",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Fstochastic-accelerated-gradient#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/stochastic-accelerated-gradient/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Logarithmic regret for strongly convex online gradients",
   "alias": "optimization/strongly-convex-online-gradient 强凸在线梯度的对数遗憾界",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Fstrongly-convex-online-gradient#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/strongly-convex-online-gradient/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "The Brownian exponential martingale",
   "alias": "probability/brownian-exponential-martingale Brownian 指数过程的鞅性质",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=probability%2Fbrownian-exponential-martingale#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/probability/brownian-exponential-martingale/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Existence and uniqueness of a continuous-path Markov kernel",
   "alias": "probability/continuous-markov-process 连续路径 Markov 核的存在唯一性",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=probability%2Fcontinuous-markov-process#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/probability/continuous-markov-process/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Doob’s strong Lᵖ maximal inequality",
   "alias": "probability/doob-lp-maximal Doob 强型 Lᵖ 极大不等式",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=probability%2Fdoob-lp-maximal#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/probability/doob-lp-maximal/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Freedman’s martingale tail bound",
   "alias": "probability/freedman-martingale-tail Freedman 鞅尾界",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=probability%2Ffreedman-martingale-tail#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/probability/freedman-martingale-tail/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Kolmogorov’s three-series theorem",
   "alias": "probability/kolmogorov-three-series Kolmogorov 三列定理",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=probability%2Fkolmogorov-three-series#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/probability/kolmogorov-three-series/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "An explicit competitive ratio for online set cover",
   "alias": "theoretical-computer-science/online-set-cover 在线集合覆盖的显式整数竞争比",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=theoretical-computer-science%2Fonline-set-cover#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/theoretical-computer-science/online-set-cover/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Optimal-order PAC sample complexity under measurability assumptions",
   "alias": "theoretical-computer-science/optimal-pac-sample-complexity 带显式可测性条件的最优阶 PAC 样本复杂度",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=theoretical-computer-science%2Foptimal-pac-sample-complexity#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/theoretical-computer-science/optimal-pac-sample-complexity/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Expected edge removal in one parallel MIS round",
   "alias": "theoretical-computer-science/parallel-independent-set 保守并列规则下 MIS 单轮期望消边界",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=theoretical-computer-science%2Fparallel-independent-set#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/theoretical-computer-science/parallel-independent-set/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Iteration count and optimality for shortest augmenting paths",
   "alias": "theoretical-computer-science/shortest-augmenting-path 最短增广路的次数界与停机最优性",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=theoretical-computer-science%2Fshortest-augmenting-path#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/theoretical-computer-science/shortest-augmenting-path/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "An instance-family barrier for online stochastic matching",
   "alias": "theoretical-computer-science/stochastic-matching-barrier 在线随机匹配的一般实例族障碍",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=theoretical-computer-science%2Fstochastic-matching-barrier#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/theoretical-computer-science/stochastic-matching-barrier/tasks/public/PROBLEM.md"
  },
  {
   "page": "Task catalogue",
@@ -262,141 +248,141 @@ const searchEntries = [
   "page": "Tier 2",
   "title": "Constant-factor integral rounding of fractional covers",
   "alias": "combinatorics/expectation-threshold-equivalence 分数覆盖的常数倍整数舍入",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=combinatorics%2Fexpectation-threshold-equivalence#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/combinatorics/expectation-threshold-equivalence/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "Stochastic domination after independent thinning",
   "alias": "combinatorics/spread-thinning-domination 独立稀释后的随机支配",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=combinatorics%2Fspread-thinning-domination#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/combinatorics/spread-thinning-domination/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "Talagrand’s discrete convexity conclusion",
   "alias": "combinatorics/talagrand-discrete-convexity Talagrand 离散凸性主结论",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=combinatorics%2Ftalagrand-discrete-convexity#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/combinatorics/talagrand-discrete-convexity/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "Low-degree Fourier weight of Boolean linear threshold functions",
   "alias": "probability/ltf-low-degree-fourier-weight Boolean 线性阈值函数的低阶 Fourier 权重",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=probability%2Fltf-low-degree-fourier-weight#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/probability/ltf-low-degree-fourier-weight/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "Periodic limits and a strict support gap for an ordered Bellman recurrence",
   "alias": "optimization/asymmetric-phase-barrier 有序 Bellman 递推的周期极限与严格支撑间隙",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Fasymmetric-phase-barrier#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/asymmetric-phase-barrier/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "One-sided derivatives of a dyadic interpolant at 3/2",
   "alias": "optimization/certified-dyadic-corner 二进插值在 3/2 处的单侧导数",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Fcertified-dyadic-corner#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/certified-dyadic-corner/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "Conditional last-iterate bounds with a random comparator",
   "alias": "optimization/conditional-restart 随机比较点下的条件末次迭代界",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Fconditional-restart#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/conditional-restart/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "Reciprocal-square summability from a marginal bound",
   "alias": "optimization/dyadic-energy 从单个边际约束推出倒数平方可和",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Fdyadic-energy#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/dyadic-energy/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "The time-uniform last-iterate frontier for stochastic gradient descent",
   "alias": "optimization/exact-frontier 随机梯度下降末次迭代的时间一致收敛边界",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Fexact-frontier#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/exact-frontier/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "Exact periodicity and limit points for a symmetric recurrence",
   "alias": "optimization/exact-symmetric-phase 对称递推的精确周期律与全部聚点",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Fexact-symmetric-phase#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/exact-symmetric-phase/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "Dyadic step-size bounds from a single Gaussian trajectory",
   "alias": "optimization/gaussian-epoch-ceiling 单条高斯轨道对二进区间步长总和的限制",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Fgaussian-epoch-ceiling#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/gaussian-epoch-ceiling/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "Equality cases for a four-point rearrangement",
   "alias": "optimization/kernel-rearrangement 四点重排的完整等号判据",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Fkernel-rearrangement#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/kernel-rearrangement/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "Classification of optimal ordered composition trees",
   "alias": "optimization/optimal-tree-classification 判定所有最优有序合成树",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Foptimal-tree-classification#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/optimal-tree-classification/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "Scaling limits from discrete compositions to ordered partitions",
   "alias": "optimization/partition-scaling-limit 从离散最优合成到连续有序分割",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Fpartition-scaling-limit#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/partition-scaling-limit/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "Optimal error scale for decoding Cantor prefixes",
   "alias": "optimization/sgd-cantor-decoder Cantor 前缀解码的最优误差量级",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Fsgd-cantor-decoder#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/sgd-cantor-decoder/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "Time-uniform contraction bounds and a matching Gaussian lower bound",
   "alias": "optimization/sgd-contractive-uniform 收缩随机逼近的全时域界与同阶高斯下界",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Fsgd-contractive-uniform#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/sgd-contractive-uniform/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "Fixed-time exponential moments and tails for strongly convex SGD",
   "alias": "optimization/sgd-extremal-logmgf 强凸 SGD 在固定时刻的指数矩与尾界",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Fsgd-extremal-logmgf#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/sgd-extremal-logmgf/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "A time-uniform lower bound with Gaussian gradient observations",
   "alias": "optimization/sgd-gaussian-lower 高斯梯度观测下的全时域优化下界",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Fsgd-gaussian-lower#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/sgd-gaussian-lower/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "A time-uniform boundary for strongly convex SGD",
   "alias": "optimization/sgd-uniform-boundary 强凸随机梯度下降的全时域界",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Fsgd-uniform-boundary#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/sgd-uniform-boundary/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "An asymptotically smaller attainable overhead profile",
   "alias": "optimization/smaller-profile 任意可达的开销函数都有渐近更小的可达函数",
-  "text": "Open the task and read its Lean target in the explorer.",
-  "href": "../../index.html?task=optimization%2Fsmaller-profile#tasks"
+  "text": "Read the problem statement in the project repository.",
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/smaller-profile/tasks/public/PROBLEM.md"
  },
  {
   "page": "Task catalogue",
@@ -404,6 +390,20 @@ const searchEntries = [
   "alias": "题目目录",
   "text": "Constant-factor integral rounding of fractional covers Stochastic domination after independent thinning Talagrand’s discrete convexity conclusion Low-degree Fourier weight of Boolean linear threshold functions Periodic limits and a strict support gap for an ordered Bellman recurrence One-sided derivatives of a dyadic interpolant at 3/2 Conditional last-iterate bounds with a random comparator Reciprocal-square summability from a marginal bound The time-uniform last-iterate frontier for stochastic gradient descent Exact periodicity and limit points for a symmetric recurrence Dyadic step-size bounds from a single Gaussian trajectory Equality cases for a four-point rearrangement Classification of optimal ordered composition trees Scaling limits from discrete compositions to ordered partitions Optimal error scale for decoding Cantor prefixes Time-uniform contraction bounds and a matching Gaussian lower bound Fixed-time exponential moments and tails for strongly convex SGD A time-uniform lower bound with Gaussian gradient observations A time-uniform boundary for strongly convex SGD An asymptotically smaller attainable overhead profile",
   "href": "catalogue.html#tier2"
+ },
+ {
+  "page": "Task catalogue",
+  "title": "Find a theorem",
+  "alias": "题目目录",
+  "text": "Open the task explorer , select a tier and choose a subject. The list is compact. Cards also show the mathematical objective. Open a title to inspect its Lean target and copy a link to the task.",
+  "href": "catalogue.html#browse"
+ },
+ {
+  "page": "Task catalogue",
+  "title": "Read the task package",
+  "alias": "题目目录",
+  "text": "PROBLEM.md describes the mathematical question. Foundation.lean supplies the allowed definitions. Task.lean contains the declaration to prove. The frozen Lean type specifies the exact parameters, assumptions and conclusion.",
+  "href": "catalogue.html#files"
  },
  {
   "page": "Task catalogue",

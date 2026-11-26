@@ -44,15 +44,15 @@ From the repository root, inspect the next queue in a clean workspace. The full 
 Use a new run name. The driver saves submissions, grades submitted proofs and writes a summary. Repeat the task option to select individual tasks from the queue.
 !code next-run
 # catalogue | Task catalogue
-Search the catalogue by name or keyword and narrow the results by subject and difficulty.
-## browse | Find a theorem
-Open the [task explorer](home:#tasks), select a tier and choose a subject. The list is compact. Cards also show the mathematical objective. Open a title to inspect its Lean target and copy a link to the task.
-## files | Read the task package
-PROBLEM.md describes the mathematical question. Foundation.lean supplies the allowed definitions. Task.lean contains the declaration to prove. The frozen Lean type specifies the exact parameters, assumptions and conclusion.
+Select a task title to read its problem statement on GitHub. Sign in with an account that has access to the private project repository.
 ## tier1 | Tier 1 tasks
 !catalogue Tier 1
 ## tier2 | Tier 2 tasks
 !catalogue Tier 2
+## browse | Find a theorem
+Open the [task explorer](home:#tasks), select a tier and choose a subject. The list is compact. Cards also show the mathematical objective. Open a title to inspect its Lean target and copy a link to the task.
+## files | Read the task package
+PROBLEM.md describes the mathematical question. Foundation.lean supplies the allowed definitions. Task.lean contains the declaration to prove. The frozen Lean type specifies the exact parameters, assumptions and conclusion.
 ## download | Export the catalogue
 Download the JSON catalogue in [resources](home:#resources) for task identifiers, tiers, subjects and targets. Use the task ID to match a run or judge receipt to its catalogue entry.
 # model | Model and run configuration

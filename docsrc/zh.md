@@ -44,15 +44,15 @@ Tier 1 基础档和 Tier 2 挑战档各有 20 题。Tier 1 在优化、组合数
 使用新的运行名称。驱动保存提交，验收已提交的证明，并写出汇总文件。可用重复的 `--task` 参数选择队列中的具体题目。
 !code next-run
 # catalogue | 题目目录
-在题库中可按数学领域和难度缩小范围，也可直接搜索题名或关键词。
-## browse | 查找一个定理
-打开[交互题库](home:#tasks)，选择 Tier 1 或 Tier 2，再选择领域。列表适合查找，卡片同时显示数学目标的简述。点击题名查看目标声明名，复制题目链接可分享同一道题。
-## files | 阅读题包
-`PROBLEM.md` 定义数学任务，`Foundation.lean` 提供允许使用的基础，`Task.lean` 包含待完成的声明。完整参数、假设和结论以冻结的 Lean 类型为准。
+点击题名即可在 GitHub 上阅读对应的题面。主仓库为私有仓库，需要使用有访问权限的账号登录。
 ## tier1 | Tier 1 基础档题目
 !catalogue Tier 1
 ## tier2 | Tier 2 挑战档题目
 !catalogue Tier 2
+## browse | 查找一个定理
+打开[交互题库](home:#tasks)，选择 Tier 1 或 Tier 2，再选择领域。列表适合查找，卡片同时显示数学目标的简述。点击题名查看目标声明名，复制题目链接可分享同一道题。
+## files | 阅读题包
+`PROBLEM.md` 定义数学任务，`Foundation.lean` 提供允许使用的基础，`Task.lean` 包含待完成的声明。完整参数、假设和结论以冻结的 Lean 类型为准。
 ## download | 导出题目清单
 在首页[评测资源](home:#resources)下载 JSON 目录，取得每题的标识、难度、领域与目标。使用题目标识将本地 run 或 judge 收据与目录对应起来。
 # model | 模型与运行配置

@@ -98,158 +98,144 @@ const searchEntries = [
   "href": "tiers.html#launch"
  },
  {
-  "page": "题目目录",
-  "title": "查找一个定理",
-  "alias": "Task catalogue",
-  "text": "打开 交互题库 ，选择 Tier 1 或 Tier 2，再选择领域。列表适合查找，卡片同时显示数学目标的简述。点击题名查看目标声明名，复制题目链接可分享同一道题。",
-  "href": "catalogue.html#browse"
- },
- {
-  "page": "题目目录",
-  "title": "阅读题包",
-  "alias": "Task catalogue",
-  "text": "PROBLEM.md 定义数学任务， Foundation.lean 提供允许使用的基础， Task.lean 包含待完成的声明。完整参数、假设和结论以冻结的 Lean 类型为准。",
-  "href": "catalogue.html#files"
- },
- {
   "page": "Tier 1",
   "title": "Berge 最大匹配的增广链刻画",
   "alias": "combinatorics/augmenting-path-maximum-matching Berge’s augmenting path criterion for maximum matchings",
   "text": "在有限简单图中，用增广交替链是否存在刻画一个匹配是否具有最大边数。",
-  "href": "../index.html?task=combinatorics%2Faugmenting-path-maximum-matching#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/combinatorics/augmenting-path-maximum-matching/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Chowla 单位差和集增长（受限版本）",
   "alias": "combinatorics/chowla-residue-sumsets Chowla’s sumset bound under a unit-difference condition",
   "text": "在模整数的加法群中，利用集合内部的单位差条件给出两集合之和的基数下界。",
-  "href": "../index.html?task=combinatorics%2Fchowla-residue-sumsets#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/combinatorics/chowla-residue-sumsets/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "团数与匹配数双约束的极值图",
   "alias": "combinatorics/clique-bounded-matching-extremal Extremal graphs with bounded clique and matching numbers",
   "text": "同时限制图的团数与匹配数，求给定顶点数时可能达到的最大边数。",
-  "href": "../index.html?task=combinatorics%2Fclique-bounded-matching-extremal#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/combinatorics/clique-bounded-matching-extremal/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Erdős–Heilbronn 二重受限和集界",
   "alias": "combinatorics/erdos-heilbronn-restricted-sums The Erdős–Heilbronn bound for restricted pair sums",
   "text": "在素数阶循环群中，只允许集合中的两个不同元素相加，证明所得和集的大小下界。",
-  "href": "../index.html?task=combinatorics%2Ferdos-heilbronn-restricted-sums#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/combinatorics/erdos-heilbronn-restricted-sums/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "均匀集合族的匹配极值与唯一性",
   "alias": "combinatorics/uniform-family-bounded-matching Extremal uniform families with bounded matching number",
   "text": "限制均匀集合族中两两不交成员的数目，确定充分大基集上的极值及等号情形。",
-  "href": "../index.html?task=combinatorics%2Funiform-family-bounded-matching#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/combinatorics/uniform-family-bounded-matching/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Nesterov 光滑凸优化加速收敛",
   "alias": "optimization/accelerated-smooth-gradient Accelerated convergence for smooth convex objectives",
   "text": "证明在指定的 Nesterov 递推下，光滑凸函数的目标差距具有显式的二次衰减界。",
-  "href": "../index.html?task=optimization%2Faccelerated-smooth-gradient#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/accelerated-smooth-gradient/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Kall–Mayer 拉格朗日鞍点与原对偶最优性",
   "alias": "optimization/kall-mayer-kkt Kall–Mayer saddle points and primal–dual optimality",
   "text": "从拉格朗日鞍点推出原问题与对偶问题的最优性，以及两者最优值相等。",
-  "href": "../index.html?task=optimization%2Fkall-mayer-kkt#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/kall-mayer-kkt/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "单二次约束的下界与 PSD 对偶证书",
   "alias": "optimization/quadratic-constraint-duality Lower bounds and PSD certificates for one quadratic constraint",
   "text": "对严格可行的单约束二次优化问题，用半正定矩阵证书刻画可行集上的目标下界。",
-  "href": "../index.html?task=optimization%2Fquadratic-constraint-duality#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/quadratic-constraint-duality/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "随机加速梯度的显式条件 oracle 版本",
   "alias": "optimization/stochastic-accelerated-gradient Stochastic accelerated gradients with a conditional oracle",
   "text": "分析带条件无偏、有限方差随机梯度的加速迭代，分别给出非凸与凸情形的期望性能界。",
-  "href": "../index.html?task=optimization%2Fstochastic-accelerated-gradient#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/stochastic-accelerated-gradient/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "强凸在线梯度的对数遗憾界",
   "alias": "optimization/strongly-convex-online-gradient Logarithmic regret for strongly convex online gradients",
   "text": "对强凸损失上的投影在线梯度算法，证明随时间对数增长的遗憾界。",
-  "href": "../index.html?task=optimization%2Fstrongly-convex-online-gradient#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/strongly-convex-online-gradient/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Brownian 指数过程的鞅性质",
   "alias": "probability/brownian-exponential-martingale The Brownian exponential martingale",
   "text": "对带漂移的实 Brownian 过程，证明经指数补偿得到的过程可积且满足鞅性质。",
-  "href": "../index.html?task=probability%2Fbrownian-exponential-martingale#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/probability/brownian-exponential-martingale/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "连续路径 Markov 核的存在唯一性",
   "alias": "probability/continuous-markov-process Existence and uniqueness of a continuous-path Markov kernel",
   "text": "给定满足 Feller 条件和矩估计的转移核半群，在连续路径空间上证明相应概率核的存在唯一性。",
-  "href": "../index.html?task=probability%2Fcontinuous-markov-process#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/probability/continuous-markov-process/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Doob 强型 Lᵖ 极大不等式",
   "alias": "probability/doob-lp-maximal Doob’s strong Lᵖ maximal inequality",
   "text": "对非负离散次鞅，利用终值的 Lᵖ 范数控制其有限时间运行最大值的 Lᵖ 范数。",
-  "href": "../index.html?task=probability%2Fdoob-lp-maximal#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/probability/doob-lp-maximal/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Freedman 鞅尾界",
   "alias": "probability/freedman-martingale-tail Freedman’s martingale tail bound",
   "text": "在增量有上界、条件漂移非正时，用累积条件方差给出部分和越界概率的指数界。",
-  "href": "../index.html?task=probability%2Ffreedman-martingale-tail#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/probability/freedman-martingale-tail/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "Kolmogorov 三列定理",
   "alias": "probability/kolmogorov-three-series Kolmogorov’s three-series theorem",
   "text": "用尾概率、截断均值和截断方差三个级数刻画独立随机变量级数的几乎处处收敛。",
-  "href": "../index.html?task=probability%2Fkolmogorov-three-series#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/probability/kolmogorov-three-series/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "在线集合覆盖的显式整数竞争比",
   "alias": "theoretical-computer-science/online-set-cover An explicit competitive ratio for online set cover",
   "text": "分析指定的无权在线集合覆盖算法，证明其覆盖性质并给出相对于最优解的整数竞争界。",
-  "href": "../index.html?task=theoretical-computer-science%2Fonline-set-cover#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/theoretical-computer-science/online-set-cover/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "带显式可测性条件的最优阶 PAC 样本复杂度",
   "alias": "theoretical-computer-science/optimal-pac-sample-complexity Optimal-order PAC sample complexity under measurability assumptions",
   "text": "在明确的可测性条件下，证明可实现 PAC 学习的 VC 维样本复杂度上界。",
-  "href": "../index.html?task=theoretical-computer-science%2Foptimal-pac-sample-complexity#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/theoretical-computer-science/optimal-pac-sample-complexity/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "保守并列规则下 MIS 单轮期望消边界",
   "alias": "theoretical-computer-science/parallel-independent-set Expected edge removal in one parallel MIS round",
   "text": "对两种随机独立集选择规则，估计并行算法一轮中移除边数的期望下界。",
-  "href": "../index.html?task=theoretical-computer-science%2Fparallel-independent-set#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/theoretical-computer-science/parallel-independent-set/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "最短增广路的次数界与停机最优性",
   "alias": "theoretical-computer-science/shortest-augmenting-path Iteration count and optimality for shortest augmenting paths",
   "text": "对有限网络中的最短增广路算法，证明增广次数的上界和停机时流的最优性。",
-  "href": "../index.html?task=theoretical-computer-science%2Fshortest-augmenting-path#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/theoretical-computer-science/shortest-augmenting-path/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 1",
   "title": "在线随机匹配的一般实例族障碍",
   "alias": "theoretical-computer-science/stochastic-matching-barrier An instance-family barrier for online stochastic matching",
   "text": "从六环及其不交并构成的实例族出发，证明在线随机匹配算法的性能障碍。",
-  "href": "../index.html?task=theoretical-computer-science%2Fstochastic-matching-barrier#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/theoretical-computer-science/stochastic-matching-barrier/tasks/public/PROBLEM.md"
  },
  {
   "page": "题目目录",
@@ -263,140 +249,140 @@ const searchEntries = [
   "title": "分数覆盖的常数倍整数舍入",
   "alias": "combinatorics/expectation-threshold-equivalence Constant-factor integral rounding of fractional covers",
   "text": "将有限集合族的分数覆盖舍入为整数覆盖，并控制舍入后覆盖的加权成本。",
-  "href": "../index.html?task=combinatorics%2Fexpectation-threshold-equivalence#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/combinatorics/expectation-threshold-equivalence/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "独立稀释后的随机支配",
   "alias": "combinatorics/spread-thinning-domination Stochastic domination after independent thinning",
   "text": "比较独立稀释后的随机集合与乘积测度，证明在指定参数下对递增事件成立的随机支配。",
-  "href": "../index.html?task=combinatorics%2Fspread-thinning-domination#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/combinatorics/spread-thinning-domination/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "Talagrand 离散凸性主结论",
   "alias": "combinatorics/talagrand-discrete-convexity Talagrand’s discrete convexity conclusion",
   "text": "在有限布尔立方体上，从集合的乘积测度下界推出相关离散凸性构造的小集覆盖性质。",
-  "href": "../index.html?task=combinatorics%2Ftalagrand-discrete-convexity#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/combinatorics/talagrand-discrete-convexity/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "Boolean 线性阈值函数的低阶 Fourier 权重",
   "alias": "probability/ltf-low-degree-fourier-weight Low-degree Fourier weight of Boolean linear threshold functions",
   "text": "对任意布尔线性阈值函数，证明常数项与一次 Fourier 系数的平方和至少为 (7423/10000)²。",
-  "href": "../index.html?task=probability%2Fltf-low-degree-fourier-weight#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/probability/ltf-low-degree-fourier-weight/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "有序 Bellman 递推的周期极限与严格支撑间隙",
   "alias": "optimization/asymmetric-phase-barrier Periodic limits and a strict support gap for an ordered Bellman recurrence",
   "text": "确定有序 Bellman 递推的周期极限函数，证明严格支撑间隙并刻画子列极限集。",
-  "href": "../index.html?task=optimization%2Fasymmetric-phase-barrier#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/asymmetric-phase-barrier/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "二进插值在 3/2 处的单侧导数",
   "alias": "optimization/certified-dyadic-corner One-sided derivatives of a dyadic interpolant at 3/2",
   "text": "构造满足二进插值条件的连续函数，并用 3/2 处不同的单侧导数证明其不可微。",
-  "href": "../index.html?task=optimization%2Fcertified-dyadic-corner#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/certified-dyadic-corner/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "随机比较点下的条件末次迭代界",
   "alias": "optimization/conditional-restart Conditional last-iterate bounds with a random comparator",
   "text": "允许比较点依赖起始时刻的已知信息，给出随机梯度迭代末次目标值的条件高概率界。",
-  "href": "../index.html?task=optimization%2Fconditional-restart#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/conditional-restart/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "从单个边际约束推出倒数平方可和",
   "alias": "optimization/dyadic-energy Reciprocal-square summability from a marginal bound",
   "text": "从非负步长序列在二进时刻满足的边际约束，推出给定控制序列的倒数平方可和。",
-  "href": "../index.html?task=optimization%2Fdyadic-energy#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/dyadic-energy/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "随机梯度下降末次迭代的时间一致收敛边界",
   "alias": "optimization/exact-frontier The time-uniform last-iterate frontier for stochastic gradient descent",
   "text": "刻画随机梯度下降的末次迭代何时可以在所有时刻同时满足给定的高概率收敛界。",
-  "href": "../index.html?task=optimization%2Fexact-frontier#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/exact-frontier/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "对称递推的精确周期律与全部聚点",
   "alias": "optimization/exact-symmetric-phase Exact periodicity and limit points for a symmetric recurrence",
   "text": "建立对称递推的精确周期表示，确定相应归一化序列的全部子列极限。",
-  "href": "../index.html?task=optimization%2Fexact-symmetric-phase#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/exact-symmetric-phase/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "单条高斯轨道对二进区间步长总和的限制",
   "alias": "optimization/gaussian-epoch-ceiling Dyadic step-size bounds from a single Gaussian trajectory",
   "text": "利用一条带高斯噪声的轨道给出的目标值约束，限制各二进区间内的步长总和。",
-  "href": "../index.html?task=optimization%2Fgaussian-epoch-ceiling#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/gaussian-epoch-ceiling/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "四点重排的完整等号判据",
   "alias": "optimization/kernel-rearrangement Equality cases for a four-point rearrangement",
   "text": "比较四个非负有序数的三种核合成方式，并刻画相邻两项取等号的全部情形。",
-  "href": "../index.html?task=optimization%2Fkernel-rearrangement#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/kernel-rearrangement/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "判定所有最优有序合成树",
   "alias": "optimization/optimal-tree-classification Classification of optimal ordered composition trees",
   "text": "固定叶子数，通过每个内节点左右子树的叶子数刻画所有达到最大根值的有序满二叉树。",
-  "href": "../index.html?task=optimization%2Foptimal-tree-classification#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/optimal-tree-classification/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "从离散最优合成到连续有序分割",
   "alias": "optimization/partition-scaling-limit Scaling limits from discrete compositions to ordered partitions",
   "text": "证明连续有序分割的值函数是最小非负超解，并将它确定为离散最优合成值的缩放极限。",
-  "href": "../index.html?task=optimization%2Fpartition-scaling-limit#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/partition-scaling-limit/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "Cantor 前缀解码的最优误差量级",
   "alias": "optimization/sgd-cantor-decoder Optimal error scale for decoding Cantor prefixes",
   "text": "为 Cantor 编码的比特前缀构造可测解码器，证明可容忍误差的量级并给出匹配下界。",
-  "href": "../index.html?task=optimization%2Fsgd-cantor-decoder#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/sgd-cantor-decoder/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "收缩随机逼近的全时域界与同阶高斯下界",
   "alias": "optimization/sgd-contractive-uniform Time-uniform contraction bounds and a matching Gaussian lower bound",
   "text": "对收缩映射的随机逼近过程证明全时域误差界，并在一维高斯噪声下给出同阶下界。",
-  "href": "../index.html?task=optimization%2Fsgd-contractive-uniform#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/sgd-contractive-uniform/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "强凸 SGD 在固定时刻的指数矩与尾界",
   "alias": "optimization/sgd-extremal-logmgf Fixed-time exponential moments and tails for strongly convex SGD",
   "text": "在强凸随机梯度下降中，控制固定时刻目标误差的指数矩，进而给出尾概率界。",
-  "href": "../index.html?task=optimization%2Fsgd-extremal-logmgf#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/sgd-extremal-logmgf/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "高斯梯度观测下的全时域优化下界",
   "alias": "optimization/sgd-gaussian-lower A time-uniform lower bound with Gaussian gradient observations",
   "text": "在未知二次目标中心的高斯梯度观测模型中，证明对所有时刻有效的优化误差下界。",
-  "href": "../index.html?task=optimization%2Fsgd-gaussian-lower#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/sgd-gaussian-lower/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "强凸随机梯度下降的全时域界",
   "alias": "optimization/sgd-uniform-boundary A time-uniform boundary for strongly convex SGD",
   "text": "对强凸随机梯度下降的目标误差，给出在全部迭代时刻同时成立的高概率上界。",
-  "href": "../index.html?task=optimization%2Fsgd-uniform-boundary#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/sgd-uniform-boundary/tasks/public/PROBLEM.md"
  },
  {
   "page": "Tier 2",
   "title": "任意可达的开销函数都有渐近更小的可达函数",
   "alias": "optimization/smaller-profile An asymptotically smaller attainable overhead profile",
   "text": "从一个满足二进可和条件的开销函数出发，构造在全体正整数上渐近更小的可达函数。",
-  "href": "../index.html?task=optimization%2Fsmaller-profile#tasks"
+  "href": "https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/optimization/smaller-profile/tasks/public/PROBLEM.md"
  },
  {
   "page": "题目目录",
@@ -404,6 +390,20 @@ const searchEntries = [
   "alias": "Task catalogue",
   "text": "分数覆盖的常数倍整数舍入 独立稀释后的随机支配 Talagrand 离散凸性主结论 Boolean 线性阈值函数的低阶 Fourier 权重 有序 Bellman 递推的周期极限与严格支撑间隙 二进插值在 3/2 处的单侧导数 随机比较点下的条件末次迭代界 从单个边际约束推出倒数平方可和 随机梯度下降末次迭代的时间一致收敛边界 对称递推的精确周期律与全部聚点 单条高斯轨道对二进区间步长总和的限制 四点重排的完整等号判据 判定所有最优有序合成树 从离散最优合成到连续有序分割 Cantor 前缀解码的最优误差量级 收缩随机逼近的全时域界与同阶高斯下界 强凸 SGD 在固定时刻的指数矩与尾界 高斯梯度观测下的全时域优化下界 强凸随机梯度下降的全时域界 任意可达的开销函数都有渐近更小的可达函数",
   "href": "catalogue.html#tier2"
+ },
+ {
+  "page": "题目目录",
+  "title": "查找一个定理",
+  "alias": "Task catalogue",
+  "text": "打开 交互题库 ，选择 Tier 1 或 Tier 2，再选择领域。列表适合查找，卡片同时显示数学目标的简述。点击题名查看目标声明名，复制题目链接可分享同一道题。",
+  "href": "catalogue.html#browse"
+ },
+ {
+  "page": "题目目录",
+  "title": "阅读题包",
+  "alias": "Task catalogue",
+  "text": "PROBLEM.md 定义数学任务， Foundation.lean 提供允许使用的基础， Task.lean 包含待完成的声明。完整参数、假设和结论以冻结的 Lean 类型为准。",
+  "href": "catalogue.html#files"
  },
  {
   "page": "题目目录",
