@@ -1,4 +1,5 @@
 """Build the public, bilingual Math Gym handbook with Python 3 (standard library only)."""
+import hashlib
 import html
 import json
 import re
@@ -67,6 +68,7 @@ def write_handbook(lang, pages, other):
     en = lang == "en"
     def tr(zh, english): return english if en else zh
     assets = "../" if en else ""
+    script_version = hashlib.sha256((OUT/"docs.js").read_bytes()).hexdigest()[:10]
     home = "../../index.html" if en else "../index.html"
     dest = OUT / ("en" if en else "")
     dest.mkdir(parents=True, exist_ok=True)
@@ -125,7 +127,7 @@ def write_handbook(lang, pages, other):
             if line.startswith("!code "):
                 text = COMMANDS[line[6:]]
                 language = "BibTeX" if line[6:] == "bib" else "Shell"
-                out.append(f'<div class="codebox"><div><span>{language}</span><button type="button" data-copy>{tr("复制","Copy")}</button></div><pre><code>{esc(text)}</code></pre></div>')
+                out.append(f'<div class="codebox"><div><span>{language}</span><button type="button" disabled data-interactive data-copy>{tr("复制","Copy")}</button></div><pre><code>{esc(text)}</code></pre></div>')
             elif line.startswith("!catalogue "):
                 out.append(catalogue(line.removeprefix("!catalogue ")))
             elif line.startswith("!cards "):
@@ -169,13 +171,13 @@ def write_handbook(lang, pages, other):
         doc = f'''<!doctype html><html lang="{tr('zh-CN','en')}" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(page['title'])} · Math Gym Docs</title><meta name="description" content="{esc(page['intro'])}">
 <script>try{{document.documentElement.dataset.theme=localStorage.getItem('mg-docs-theme')==='light'?'light':'dark'}}catch{{}}</script>
-<link rel="stylesheet" href="{assets}docs.css"><script defer src="{assets}search-{lang}.js"></script><script defer src="{assets}docs.js"></script></head><body>
+<link rel="stylesheet" href="{assets}docs.css"><script defer src="{assets}docs.js?v={script_version}" data-search-index="{assets}search-{lang}.js"></script></head><body>
 <a class="skip" href="#article">{tr('跳到正文','Skip to content')}</a>
 <aside class="sidebar" id="sidebar"><a class="brand" href="index.html">Math Gym <span>Docs</span></a><nav aria-label="{tr('文档目录','Documentation menu')}">{''.join(nav)}</nav></aside>
 <button class="scrim" type="button" aria-label="{tr('关闭菜单','Close menu')}" hidden></button>
-<header class="topbar"><button class="menu" type="button" aria-expanded="false" aria-controls="sidebar">{tr('☰ 目录','☰ Menu')}</button><a class="home" href="{home}">← {tr('项目首页','Project home')}</a>
-<button class="search-open" type="button" aria-haspopup="dialog"><span aria-hidden="true">⌕</span> {tr('搜索文档','Search docs')} <kbd>⌘ K</kbd></button>
-<div class="top-links"><a class="docs-home" href="index.html">{tr('文档','Documentation')}</a><a class="get-started" href="quickstart.html">{tr('快速开始','Get started')}</a><button class="theme" type="button" aria-label="{tr('切换明暗主题','Toggle color theme')}">◐</button><a href="{REPO}" class="git">GitHub ↗</a><a class="language" href="{language_url}" hreflang="{tr('en','zh-CN')}">{tr('EN','中文')}</a></div></header>
+<header class="topbar"><button class="menu" type="button" disabled data-interactive aria-expanded="false" aria-controls="sidebar">{tr('☰ 目录','☰ Menu')}</button><a class="home" href="{home}">← {tr('项目首页','Project home')}</a>
+<button class="search-open" type="button" disabled data-interactive aria-haspopup="dialog"><span aria-hidden="true">⌕</span> {tr('搜索文档','Search docs')} <kbd>⌘ K</kbd></button>
+<div class="top-links"><a class="docs-home" href="index.html">{tr('文档','Documentation')}</a><a class="get-started" href="quickstart.html">{tr('快速开始','Get started')}</a><button class="theme" type="button" disabled data-interactive aria-label="{tr('切换明暗主题','Toggle color theme')}">◐</button><a href="{REPO}" class="git">GitHub ↗</a><a class="language" href="{language_url}" hreflang="{tr('en','zh-CN')}">{tr('EN','中文')}</a></div></header>
 <div class="workspace"><main id="article" tabindex="-1"><div class="eyebrow">{esc(current_group)}</div><h1>{esc(page['title'])}</h1><p class="lead">{esc(page['intro'])}</p>
 <details class="mobile-toc"><summary>{tr('本页目录','On this page')}</summary>{''.join(toc)}</details>
 {''.join(body)}

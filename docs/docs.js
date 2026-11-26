@@ -102,9 +102,24 @@ const results = select(".search-results");
 const count = select(".search-count");
 const opener = select(".search-open");
 const normalize = text => text.normalize("NFKC").toLowerCase();
-const entries = searchEntries.map(item => ({
-  item, title:normalize(item.title), page:normalize(item.page+" "+item.alias), text:normalize(item.text)
-}));
+let entries = null;
+let loading = null;
+function loadIndex() {
+  if (loading) return loading;
+  const resource = document.createElement("script");
+  resource.src = select("script[data-search-index]").dataset.searchIndex;
+  loading = new Promise((resolve,reject)=>{
+    resource.onload = () => {
+      entries = searchEntries.map(item=>({
+        item, title:normalize(item.title), page:normalize(item.page+" "+item.alias), text:normalize(item.text)
+      }));
+      resolve();
+    };
+    resource.onerror = () => {loading=null;resource.remove();reject(new Error("Search index unavailable"));};
+  });
+  document.head.append(resource);
+  return loading;
+}
 let highlighted = -1;
 function highlight(index, scroll=false) {
   const links = [...results.children];
@@ -113,6 +128,7 @@ function highlight(index, scroll=false) {
   if (scroll && highlighted>=0) links[highlighted].scrollIntoView({block:"nearest"});
 }
 function renderSearch() {
+  if (!entries) return;
   const query = normalize(input.value.trim());
   const terms = query.split(/\s+/).filter(Boolean);
   let matches;
@@ -145,7 +161,12 @@ function renderSearch() {
 function openSearch() {
   if (!scrim.hidden) toggleMenu(false);
   if (!dialog.open) dialog.showModal();
-  input.value = "";renderSearch();input.focus();
+  input.value = "";input.focus();
+  if (entries) {renderSearch();return;}
+  count.textContent = word("正在加载搜索索引…","Loading the search index…");
+  loadIndex().then(renderSearch).catch(()=>{
+    count.textContent = word("搜索索引加载失败，请重新打开搜索重试。","The search index could not load. Reopen search to retry.");
+  });
 }
 opener.onclick = openSearch;
 dialog.addEventListener("click",event=>{
@@ -178,3 +199,5 @@ document.addEventListener("keydown", event=>{
   }
 });
 if (!/Mac|iPhone|iPad/.test(navigator.platform)) select(".search-open kbd").textContent="Ctrl K";
+
+for (const control of all("[data-interactive]")) control.disabled = false;

@@ -1,24 +1,24 @@
 <!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>运行 Tier 1 或 Tier 2 · Math Gym Docs</title><meta name="description" content="两档使用相同的单题预算和证明验收规则，运行入口对应各自的冻结题包。">
 <script>try{document.documentElement.dataset.theme=localStorage.getItem('mg-docs-theme')==='light'?'light':'dark'}catch{}</script>
-<link rel="stylesheet" href="docs.css"><script defer src="search-zh.js"></script><script defer src="docs.js"></script></head><body>
+<link rel="stylesheet" href="docs.css"><script defer src="docs.js?v=7675100e52" data-search-index="search-zh.js"></script></head><body>
 <a class="skip" href="#article">跳到正文</a>
 <aside class="sidebar" id="sidebar"><a class="brand" href="index.html">Math Gym <span>Docs</span></a><nav aria-label="文档目录"><details open><summary>从这里开始</summary><div><a href="index.html">文档导览</a><a href="overview.html">项目概览</a><a href="quickstart.html">快速开始</a><a aria-current="page" href="tiers.html">运行 Tier 1 或 Tier 2</a><a href="catalogue.html">题目目录</a></div></details><details open><summary>配置与运行</summary><div><a href="model.html">模型与运行配置</a><a href="resources.html">准备资源与缓存</a><a href="host.html">主机要求</a><a href="protocol.html">模型工具与评测协议</a><a href="adapters.html">模型接口适配器</a></div></details><details open><summary>理解评测</summary><div><a href="scoring.html">评分与结果</a><a href="judge.html">独立判题与隔离检查</a><a href="references.html">参考答案与核验范围</a><a href="citation.html">引用本评测</a></div></details><details><summary>部署与维护</summary><div><a href="maintenance.html">构建、自检与分发</a><a href="troubleshooting.html">故障排查</a></div></details><details><summary>参与贡献</summary><div><a href="contribute.html">贡献题目或修订</a><a href="licenses.html">许可、来源与分发</a></div></details><details><summary>依赖与环境</summary><div><a href="dependencies.html">Lean 环境与依赖锁</a></div></details></nav></aside>
 <button class="scrim" type="button" aria-label="关闭菜单" hidden></button>
-<header class="topbar"><button class="menu" type="button" aria-expanded="false" aria-controls="sidebar">☰ 目录</button><a class="home" href="../index.html">← 项目首页</a>
-<button class="search-open" type="button" aria-haspopup="dialog"><span aria-hidden="true">⌕</span> 搜索文档 <kbd>⌘ K</kbd></button>
-<div class="top-links"><a class="docs-home" href="index.html">文档</a><a class="get-started" href="quickstart.html">快速开始</a><button class="theme" type="button" aria-label="切换明暗主题">◐</button><a href="https://github.com/Project-Formula/math-gym-lean" class="git">GitHub ↗</a><a class="language" href="en/tiers.html" hreflang="en">EN</a></div></header>
+<header class="topbar"><button class="menu" type="button" disabled data-interactive aria-expanded="false" aria-controls="sidebar">☰ 目录</button><a class="home" href="../index.html">← 项目首页</a>
+<button class="search-open" type="button" disabled data-interactive aria-haspopup="dialog"><span aria-hidden="true">⌕</span> 搜索文档 <kbd>⌘ K</kbd></button>
+<div class="top-links"><a class="docs-home" href="index.html">文档</a><a class="get-started" href="quickstart.html">快速开始</a><button class="theme" type="button" disabled data-interactive aria-label="切换明暗主题">◐</button><a href="https://github.com/Project-Formula/math-gym-lean" class="git">GitHub ↗</a><a class="language" href="en/tiers.html" hreflang="en">EN</a></div></header>
 <div class="workspace"><main id="article" tabindex="-1"><div class="eyebrow">从这里开始</div><h1>运行 Tier 1 或 Tier 2</h1><p class="lead">两档使用相同的单题预算和证明验收规则，运行入口对应各自的冻结题包。</p>
 <details class="mobile-toc"><summary>本页目录</summary><a href="#tier1">Tier 1 · 基础</a><a href="#tier2">Tier 2 · 挑战</a><a href="#launch">运行挑战档</a></details>
 <section aria-labelledby="tier1"><h2 id="tier1">Tier 1 · 基础 <a class="permalink" href="#tier1" aria-label="链接到 Tier 1 · 基础">#</a></h2><p>完成<a href="quickstart.html">快速开始</a>的安装、模型配置和 doctor 检查。使用基础档 v2 环境并省略单题过滤器，运行全部 20 题。结束后在同一终端执行<a href="quickstart.html#inspect">判分与汇总命令</a>。</p>
-<div class="codebox"><div><span>Shell</span><button type="button" data-copy>复制</button></div><pre><code>RUN=.runtime/core20-runs/tier1-model
+<div class="codebox"><div><span>Shell</span><button type="button" disabled data-interactive data-copy>复制</button></div><pre><code>RUN=.runtime/core20-runs/tier1-model
 python3 -m scripts.lean_core_eval run --release &quot;$BUNDLE/release&quot; \
   --model .runtime/my-model.json --output &quot;$RUN&quot;</code></pre></div></section><section aria-labelledby="tier2"><h2 id="tier2">Tier 2 · 挑战 <a class="permalink" href="#tier2" aria-label="链接到 Tier 2 · 挑战">#</a></h2><p>从仓库根目录使用定理评测入口，在干净的运行环境查看 next 队列；完整挑战档应有 20 题。已有有效作答的题目版本会从后续队列跳过。确认选题后，在新目录准备题包并运行检查。</p>
-<div class="codebox"><div><span>Shell</span><button type="button" data-copy>复制</button></div><pre><code>python3 -m scripts.theorem_eval plan
+<div class="codebox"><div><span>Shell</span><button type="button" disabled data-interactive data-copy>复制</button></div><pre><code>python3 -m scripts.theorem_eval plan
 ROUND=.runtime/theorem-proving/tier2
 python3 -m scripts.theorem_eval prepare --base &quot;$BUNDLE/release&quot; --output &quot;$ROUND&quot;
 python3 -m scripts.theorem_eval doctor --release &quot;$ROUND&quot; --output .runtime/tier2-doctor</code></pre></div></section><section aria-labelledby="launch"><h2 id="launch">运行挑战档 <a class="permalink" href="#launch" aria-label="链接到 运行挑战档">#</a></h2><p>使用新的运行名称。驱动保存提交，验收已提交的证明，并写出汇总文件。可用重复的 <code>--task</code> 参数选择队列中的具体题目。</p>
-<div class="codebox"><div><span>Shell</span><button type="button" data-copy>复制</button></div><pre><code>python3 -m scripts.theorem_eval run --release &quot;$ROUND&quot; \
+<div class="codebox"><div><span>Shell</span><button type="button" disabled data-interactive data-copy>复制</button></div><pre><code>python3 -m scripts.theorem_eval run --release &quot;$ROUND&quot; \
   --model .runtime/my-model.json --name tier2-model</code></pre></div></section>
 <footer><a href="https://github.com/Project-Formula/math-gym-lean/blob/main/problems/theorem-proving/evaluation/README.md">在 GitHub 查看项目资料 ↗</a><span> · 需仓库访问权限</span>
 <nav class="pager" aria-label="相邻文档"><a href="quickstart.html"><small>← 上一篇</small><span>快速开始</span></a><a href="catalogue.html"><small>下一篇 →</small><span>题目目录</span></a></nav></footer></main>
