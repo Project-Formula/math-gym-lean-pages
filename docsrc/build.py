@@ -67,6 +67,8 @@ def write_handbook(lang, pages, other):
     en = lang == "en"
     def tr(zh, english): return english if en else zh
     assets = "../" if en else ""
+    mark = assets + "../proof-mark.svg"
+    style_version = hashlib.sha256((OUT/"docs.css").read_bytes()).hexdigest()[:10]
     script_version = hashlib.sha256((OUT/"docs.js").read_bytes()).hexdigest()[:10]
     home = "../../index.html" if en else "../index.html"
     dest = OUT / ("en" if en else "")
@@ -167,12 +169,15 @@ def write_handbook(lang, pages, other):
             search.append({"page":page["title"],"title":s["heading"],"alias":other[slug]["title"],"text":plain,"href":url(slug)+"#"+anchor})
         source = url("repo:"+SOURCES.get(slug,EVAL+"README.md"))
         language_url = ("../" if en else "en/")+slug+".html"
-        doc = f'''<!doctype html><html lang="{tr('zh-CN','en')}" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+        doc = f'''<!doctype html><html lang="{tr('zh-CN','en')}" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(page['title'])} · Math Gym Docs</title><meta name="description" content="{esc(page['intro'])}">
-<script>try{{document.documentElement.dataset.theme=localStorage.getItem('mg-docs-theme')==='light'?'light':'dark'}}catch{{}}</script>
-<link rel="stylesheet" href="{assets}docs.css"><script defer src="{assets}docs.js?v={script_version}" data-search-index="{assets}search-{lang}.js"></script></head><body>
+<script>try{{
+  const saved = localStorage.getItem('mg-docs-theme');
+  document.documentElement.dataset.theme = saved === 'dark' || saved === 'light' ? saved : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}}catch{{}}</script>
+<link rel="icon" type="image/svg+xml" href="{mark}"><link rel="stylesheet" href="{assets}docs.css?v={style_version}"><script defer src="{assets}docs.js?v={script_version}" data-search-index="{assets}search-{lang}.js"></script></head><body>
 <a class="skip" href="#article">{tr('跳到正文','Skip to content')}</a>
-<aside class="sidebar" id="sidebar"><a class="brand" href="index.html">Math Gym <span>Docs</span></a><nav aria-label="{tr('文档目录','Documentation menu')}">{''.join(nav)}</nav></aside>
+<aside class="sidebar" id="sidebar"><a class="brand" href="index.html"><img src="{mark}" width="30" height="30" alt="">Math Gym <span>Docs</span></a><nav aria-label="{tr('文档目录','Documentation menu')}">{''.join(nav)}</nav></aside>
 <button class="scrim" type="button" aria-label="{tr('关闭菜单','Close menu')}" hidden></button>
 <header class="topbar"><button class="menu" type="button" disabled data-interactive aria-expanded="false" aria-controls="sidebar">{tr('☰ 目录','☰ Menu')}</button><a class="home" href="{home}">← {tr('项目首页','Project home')}</a>
 <button class="search-open" type="button" disabled data-interactive aria-haspopup="dialog"><span aria-hidden="true">⌕</span> {tr('搜索文档','Search docs')} <kbd>⌘ K</kbd></button>
