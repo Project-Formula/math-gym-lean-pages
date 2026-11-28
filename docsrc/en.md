@@ -109,7 +109,7 @@ An accepted proof earns 100. A rejected submission or a normally completed attem
 ## tier | Read a tier result
 A tier has 20 tasks. For example, three accepted proofs give 300/2000 points and a 15% pass rate. Interim records show the number graded and accepted, with the final rate pending. Team-reported aggregates are identified in the source column.
 ## csv | Interpret the CSV
-Accepted counts the successful tasks, scored counts the recorded judgments and total is the tier size. The pass_rate uses the published denominator. Status and source identify incomplete, completed or team-reported records. Download either the [Tier 1](home:#tier-1) or [Tier 2](home:#tier-2) table.
+`model` includes the version. When the version comes from the provider's description of an API alias, `version_note` identifies the model string returned during evaluation. Accepted counts the successful tasks, scored counts the recorded judgments and total is the tier size. The pass_rate uses the published denominator. Status and source identify incomplete, completed or team-reported records. Download either the [Tier 1](home:#tier-1) or [Tier 2](home:#tier-2) table.
 # judge | Independent judging and isolation
 The public worker and the judge load different materials for solving and verifying a task.
 ## boundary | What the model sees

@@ -535,7 +535,7 @@ const searchEntries = [
   "page": "Scoring and results",
   "title": "Interpret the CSV",
   "alias": "评分与结果",
-  "text": "Accepted counts the successful tasks, scored counts the recorded judgments and total is the tier size. The pass_rate uses the published denominator. Status and source identify incomplete, completed or team-reported records. Download either the Tier 1 or Tier 2 table.",
+  "text": "model includes the version. When the version comes from the provider's description of an API alias, version_note identifies the model string returned during evaluation. Accepted counts the successful tasks, scored counts the recorded judgments and total is the tier size. The pass_rate uses the published denominator. Status and source identify incomplete, completed or team-reported records. Download either the Tier 1 or Tier 2 table.",
   "href": "scoring.html#csv"
  },
  {

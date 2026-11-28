@@ -109,7 +109,7 @@ Tier 1 基础档和 Tier 2 挑战档各有 20 题。Tier 1 在优化、组合数
 ## tier | 读懂一个难度的成绩
 每档有 20 题。例如通过 3 题，总分为 300/2000，通过率为 15%。阶段记录会同时列出已评分题数和通过题数，最终通过率留待定分。团队提供的整档汇总在来源栏标为团队汇总。
 ## csv | 对照 CSV
-`accepted` 是通过题数，`scored` 是已有的定分记录数，`total` 是该档题数。`pass_rate` 使用公布的分母，`status` 和 `source` 表示记录状态与来源。可从 [Tier 1](home:#tier-1) 和 [Tier 2](home:#tier-2) 单独下载成绩。
+`model` 包含模型版本。若版本名称来自服务商对 API 别名的说明，`version_note` 会注明实际返回的标识。`accepted` 是通过题数，`scored` 是已有的定分记录数，`total` 是该档题数。`pass_rate` 使用公布的分母，`status` 和 `source` 表示记录状态与来源。可从 [Tier 1](home:#tier-1) 和 [Tier 2](home:#tier-2) 单独下载成绩。
 # judge | 独立判题与隔离检查
 公开环境与判题环境分别装载作答材料和冻结验收声明。
 ## boundary | 模型能看到什么

@@ -535,7 +535,7 @@ const searchEntries = [
   "page": "评分与结果",
   "title": "对照 CSV",
   "alias": "Scoring and results",
-  "text": "accepted 是通过题数， scored 是已有的定分记录数， total 是该档题数。 pass_rate 使用公布的分母， status 和 source 表示记录状态与来源。可从 Tier 1 和 Tier 2 单独下载成绩。",
+  "text": "model 包含模型版本。若版本名称来自服务商对 API 别名的说明， version_note 会注明实际返回的标识。 accepted 是通过题数， scored 是已有的定分记录数， total 是该档题数。 pass_rate 使用公布的分母， status 和 source 表示记录状态与来源。可从 Tier 1 和 Tier 2 单独下载成绩。",
   "href": "scoring.html#csv"
  },
  {

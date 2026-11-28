@@ -81,10 +81,10 @@ header{position:sticky;top:0;z-index:3;background:var(--paper)}html{scroll-paddi
 }</code></pre><div class="actions"><button id="copy-citation">复制 BibTeX</button><a id="bib-download" download="math-gym.bib">下载 .bib ↓</a></div></div>
   <div class="actions"><a href="https://github.com/Project-Formula/math-gym-lean/blob/main/CONTRIBUTING.md">出题与贡献指南 ↗</a><a href="https://github.com/Project-Formula/math-gym-lean-pages/issues">反馈网站或成绩问题 ↗</a></div>
 </section>
-<footer class="foot"><span>Project Formula · Math Gym　|　成绩更新于 2026-11-27</span><a href="#overview">返回顶部 ↑</a></footer></main>
+<footer class="foot"><span>Project Formula · Math Gym　|　成绩更新于 <time id="score-date"></time></span><a href="#overview">返回顶部 ↑</a></footer></main>
 <script type="application/json" id="dataset">
 {
-  "updated": "2026-11-27",
+  "updated": "2026-11-28",
   "topics": {
     "Tier 1": [
       {
@@ -340,7 +340,7 @@ header{position:sticky;top:0;z-index:3;background:var(--paper)}html{scroll-paddi
         "source": "逐题评分记录"
       },
       {
-        "name": "Grok",
+        "name": "Grok 4.7",
         "accepted": 18,
         "scored": 20,
         "source": "团队汇总"
@@ -361,16 +361,22 @@ header{position:sticky;top:0;z-index:3;background:var(--paper)}html{scroll-paddi
     ],
     "Tier 2": [
       {
-        "name": "GPT Sol",
+        "name": "GPT-6 Sol",
         "accepted": 15,
         "scored": 20,
         "source": "团队汇总"
       },
       {
-        "name": "GPT Astra",
+        "name": "GPT-6 Astra",
         "accepted": 15,
         "scored": 20,
         "source": "团队汇总"
+      },
+      {
+        "name": "Claude Opus 5.5",
+        "accepted": 11,
+        "scored": 20,
+        "source": "逐题评分记录"
       },
       {
         "name": "Kimi K3.1 Pro",
@@ -379,16 +385,11 @@ header{position:sticky;top:0;z-index:3;background:var(--paper)}html{scroll-paddi
         "source": "逐题评分记录"
       },
       {
-        "name": "DeepSeek Flash",
+        "name": "DeepSeek V4.1 Flash-1017",
+        "versionNote": "DeepSeek 在评测准备时将 Flash 标为 V4.1-Flash-1017。本轮 API 请求和返回的标识均为 deepseek-flash，该别名未锁定日期快照。",
         "accepted": 3,
         "scored": 20,
         "source": "逐题评分记录"
-      },
-      {
-        "name": "Claude Opus 5.5",
-        "accepted": 6,
-        "scored": 12,
-        "source": "阶段评分记录"
       }
     ]
   }
@@ -397,6 +398,8 @@ header{position:sticky;top:0;z-index:3;background:var(--paper)}html{scroll-paddi
 <script>
 const data = JSON.parse(document.getElementById("dataset").textContent);
 const byId = id => document.getElementById(id);
+const scoreDate = byId("score-date");
+scoreDate.dateTime = scoreDate.textContent = data.updated;
 const levels = {"Tier 1":"基础", "Tier 2":"挑战"};
 const domains = {"combinatorics":"组合数学","probability":"概率论","optimization":"优化","theoretical-computer-science":"理论计算机科学"};
 const tasks = Object.entries(data.topics).flatMap(([tier, topics]) => topics.map(topic => ({...topic,tier,domain:domains[topic.id.split("/")[0]]})));
@@ -434,9 +437,9 @@ function download(node,content,type,filename) {
   node.download=filename;
 }
 function scoresCSV(entries) {
-  const rows=[["tier","model","accepted","scored","total","pass_rate","status","source"]];
+  const rows=[["tier","model","accepted","scored","total","pass_rate","status","source","version_note"]];
   for (const [tier,models] of entries) {
-    for (const m of models) rows.push([tier,m.name,m.accepted,m.scored,20,passRate(m),m.reportedTotal?"team_reported":m.scored===20?"complete":m.scored===null?"testing":"partial",m.source]);
+    for (const m of models) rows.push([tier,m.name,m.accepted,m.scored,20,passRate(m),m.reportedTotal?"team_reported":m.scored===20?"complete":m.scored===null?"testing":"partial",m.source,m.versionNote]);
   }
   return "\uFEFF"+rows.map(row=>row.map(value=>'"'+String(value??"").replaceAll('"','""')+'"').join(",")).join("\r\n");
 }
@@ -477,8 +480,8 @@ for (const [tier,models] of Object.entries(data.scores)) {
   const link=section.querySelector(".tier-csv");
   link.textContent="下载 "+tier+" 成绩 ↓ CSV";
   download(link,scoresCSV([[tier,models]]),"text/csv;charset=utf-8","math-gym-"+id+".csv");
-  if (models.some(m=>m.scored>0 && !publishedTotal(m))) {
-    section.querySelector("aside").append(element("p","阶段成绩记录于 2026-11-26 22:12（北京时间）。","note"));
+  for (const model of models) {
+    if (model.versionNote) section.querySelector("aside").append(element("p",model.versionNote,"note"));
   }
   const controls=section.querySelector(".switch"), content=section.querySelector(".score-content");
   controls.setAttribute("aria-label",tier+" 成绩视图");
